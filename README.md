@@ -338,6 +338,10 @@ async def webhook(request: Request, db: Session = Depends(get_db)):
     return {"message": "Status updated successfully"}
 ```
 
+## Deployment
+
+This project is deployed on Koyeb and is live at [Live Site](https://hushed-dredi-omkie-de266b00.koyeb.app/)
+
 ## Conclusion
 
 This project demonstrates how to integrate FastAPI with SQLAlchemy, Celery, Redis, and PostgreSQL for handling long-running tasks, validating file uploads, and managing task statuses with webhooks. The use of Docker ensures that the application can be easily deployed and scaled. Feel free to customize and extend this setup based on your specific requirements.

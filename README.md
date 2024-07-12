@@ -14,7 +14,8 @@ This project demonstrates how to build a production-ready asynchronous image pro
 8. [Celery Workers](#celery-workers)
 9. [Celery Worker Functions Documentation](#celery-worker-functions-documentation)
 10. [Webhook Handling](#webhook-handling)
-11. [Conclusion](#conclusion)
+11. [Deployment](#deployment)
+12. [Conclusion](#conclusion)
 
 ## API Endpoints Usage
 

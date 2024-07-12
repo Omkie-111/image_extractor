@@ -28,6 +28,8 @@ Description: Upload a CSV file for processing.
 curl -F "file=@path/to/your/file.csv" http://localhost:8000/api/upload  (for development)
 
 $ curl -X POST "https://hushed-dredi-omkie-de266b00.koyeb.app/api/upload" -F "file=@path/to/your/file.csv"  (for live website)
+
+Example : curl -X POST "https://hushed-dredi-omkie-de266b00.koyeb.app/api/upload" -F "file=@sample_file.csv"  (for live website)
 ```
 Response: 
 ```json
@@ -53,6 +55,8 @@ Description: Check the status of a background task. Here **task_id** is the **id
 curl http://localhost:8000/api/status/{task_id} (for development)
 
 curl https://hushed-dredi-omkie-de266b00.koyeb.app/api/status/{task_id}  (for live website)
+
+Example : curl https://hushed-dredi-omkie-de266b00.koyeb.app/api/status/1
 ```
 Response:
 ```json

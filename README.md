@@ -68,7 +68,7 @@ Response:
 
 ## Project Low-Level Design
 
-![Low-Level Design](https://drive.google.com/file/d/1Tec5YQAKaC7pXbHY5hd8dMLAg9kpKbGQ/view?usp=sharing)
+![Low-Level Design](https://drive.google.com/uc?export=view&id=1Tec5YQAKaC7pXbHY5hd8dMLAg9kpKbGQ)
 
 ## Project Structure
 ```

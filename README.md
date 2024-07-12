@@ -6,16 +6,17 @@ This project demonstrates how to build a production-ready asynchronous image pro
 ## Table of Contents
 1. [API Endpoints Usage](#api-endpoints-usage)
 2. [Project Structure](#project-structure)
-3. [Setup Instructions](#setup-instructions)
-4. [Database Configuration](#database-configuration)
-5. [API Endpoints](#api-endpoints)
-6. [Running the Application](#running-the-application)
-7. [CSV Validation](#csv-validation)
-8. [Celery Workers](#celery-workers)
-9. [Celery Worker Functions Documentation](#celery-worker-functions-documentation)
-10. [Webhook Handling](#webhook-handling)
-11. [Deployment](#deployment)
-12. [Conclusion](#conclusion)
+3. [Project Low-Level Design](#project-low-level-design)
+4. [Setup Instructions](#setup-instructions)
+5. [Database Configuration](#database-configuration)
+6. [API Endpoints](#api-endpoints)
+7. [Running the Application](#running-the-application)
+8. [CSV Validation](#csv-validation)
+9. [Celery Workers](#celery-workers)
+10. [Celery Worker Functions Documentation](#celery-worker-functions-documentation)
+11. [Webhook Handling](#webhook-handling)
+12. [Deployment](#deployment)
+13. [Conclusion](#conclusion)
 
 ## API Endpoints Usage
 
@@ -64,6 +65,10 @@ Response:
       "output_image_urls": "http://example.com/output-image1.jpg"
 }
 ```
+
+## Project Low-Level Design
+
+![Low-Level Design](https://drive.google.com/file/d/1Tec5YQAKaC7pXbHY5hd8dMLAg9kpKbGQ/view?usp=sharing)
 
 ## Project Structure
 ```

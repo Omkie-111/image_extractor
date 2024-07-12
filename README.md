@@ -60,8 +60,8 @@ Response:
       "serial_number": "SN123",
       "product_name": "Product1",
       "input_image_urls": "http://example.com/image1.jpg",
-      "status": "pending",
-      "output_image_urls": ""
+      "status": "Completed",
+      "output_image_urls": "http://example.com/output-image1.jpg"
 }
 ```
 

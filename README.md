@@ -91,6 +91,7 @@ image_extractor/
 │   ├── main.py
 │   └── requirements.txt
 │
+├── processed_images/
 ├── .env
 ├── docker-compose.yml
 ├── Dockerfile

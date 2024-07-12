@@ -15,8 +15,9 @@ This project demonstrates how to build a production-ready asynchronous image pro
 9. [Celery Workers](#celery-workers)
 10. [Celery Worker Functions Documentation](#celery-worker-functions-documentation)
 11. [Webhook Handling](#webhook-handling)
-12. [Deployment](#deployment)
-13. [Conclusion](#conclusion)
+12. [Public Postman COllection Link](#public-postman-collection-link)
+13. [Deployment](#deployment)
+14. [Conclusion](#conclusion)
 
 ## API Endpoints Usage
 
@@ -347,6 +348,10 @@ async def webhook(request: Request, db: Session = Depends(get_db)):
     db_product = crud.update_product_status(db, request_id, status, output_image_urls)
     return {"message": "Status updated successfully"}
 ```
+
+## Public Postman COllection Link
+
+This is the public link to my postman collection [Postman](https://elements.getpostman.com/redirect?entityId=33676825-69e4063c-c94e-4cd4-8470-9ebde6a52f94&entityType=collection)
 
 ## Deployment
 

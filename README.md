@@ -94,6 +94,7 @@ image_extractor/
 ├── .env
 ├── docker-compose.yml
 ├── Dockerfile
+├── Dockerfile.koyeb
 └── README.md
 ```
 

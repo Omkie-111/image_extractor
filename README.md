@@ -4,16 +4,65 @@
 This project demonstrates how to build a production-ready asynchronous image processing API using FastAPI, SQLAlchemy, Celery, and Docker. The application allows users to upload a CSV file with product details, process images associated with the products asynchronously, and provides endpoints to check the status of the tasks and handle webhooks for updates.
 
 ## Table of Contents
-1. [Project Structure](#project-structure)
-2. [Setup Instructions](#setup-instructions)
-3. [Database Configuration](#database-configuration)
-4. [API Endpoints](#api-endpoints)
-5. [Running the Application](#running-the-application)
-6. [CSV Validation](#csv-validation)
-7. [Celery Workers](#celery-workers)
-8. [Celery Worker Functions Documentation](#celery-worker-functions-documentation)
-9. [Webhook Handling](#webhook-handling)
-10. [Conclusion](#conclusion)
+1. [API Endpoints Usage](#api-endpoints-usage)
+2. [Project Structure](#project-structure)
+3. [Setup Instructions](#setup-instructions)
+4. [Database Configuration](#database-configuration)
+5. [API Endpoints](#api-endpoints)
+6. [Running the Application](#running-the-application)
+7. [CSV Validation](#csv-validation)
+8. [Celery Workers](#celery-workers)
+9. [Celery Worker Functions Documentation](#celery-worker-functions-documentation)
+10. [Webhook Handling](#webhook-handling)
+11. [Conclusion](#conclusion)
+
+## API Endpoints Usage
+
+### Upload CSV
+Endpoint: `/upload`
+Method: `POST`
+Description: Upload a CSV file for processing.
+```sh
+curl -F "file=@path/to/your/file.csv" http://localhost:8000/api/upload  (for development)
+
+$ curl -X POST "https://hushed-dredi-omkie-de266b00.koyeb.app/api/upload" -F "file=@path/to/your/file.csv"  (for live website)
+```
+Response: 
+```json
+{
+  "products": [
+    {
+      "id": 1,
+      "serial_number": "SN123",
+      "product_name": "Product1",
+      "input_image_urls": "http://example.com/image1.jpg",
+      "status": "pending",
+      "output_image_urls": ""
+    }
+  ]
+}
+```
+
+### Check Task Status
+Endpoint: `/status/{task_id}`
+Method: `GET`
+Description: Check the status of a background task. Here **task_id** is the **id** in the previous **response**
+```sh
+curl http://localhost:8000/api/status/{task_id} (for development)
+
+curl https://hushed-dredi-omkie-de266b00.koyeb.app/api/status/{task_id}  (for live website)
+```
+Response:
+```json
+{
+      "id": 1,
+      "serial_number": "SN123",
+      "product_name": "Product1",
+      "input_image_urls": "http://example.com/image1.jpg",
+      "status": "pending",
+      "output_image_urls": ""
+}
+```
 
 ## Project Structure
 ```
@@ -45,6 +94,7 @@ image_extractor/
 ├── .env
 ├── docker-compose.yml
 ├── Dockerfile
+├── Dockerfile.koyeb
 └── README.md
 ```
 
@@ -290,21 +340,3 @@ async def webhook(request: Request, db: Session = Depends(get_db)):
 ## Conclusion
 
 This project demonstrates how to integrate FastAPI with SQLAlchemy, Celery, Redis, and PostgreSQL for handling long-running tasks, validating file uploads, and managing task statuses with webhooks. The use of Docker ensures that the application can be easily deployed and scaled. Feel free to customize and extend this setup based on your specific requirements.
-
-## API Endpoints
-
-### Upload CSV
-Endpoint: `/upload`
-Method: `POST`
-Description: Upload a CSV file for processing.
-```sh
-curl -F "file=@path/to/your/file.csv" http://localhost:8000/upload
-```
-
-### Check Task Status
-Endpoint: `/status/{task_id}`
-Method: `GET`
-Description: Check the status of a background task.
-```sh
-curl http://localhost:8000/status/{task_id}
-```
